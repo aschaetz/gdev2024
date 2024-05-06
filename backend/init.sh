@@ -1,10 +1,10 @@
 apt update -y && apt install -y sshfs
-mkdir /mnt/pine-data-phymgr/
+mkdir -p /mnt/pine-data-phymgr/
 sshfs -o allow_other,default_permissions phymgr@pine.ch.genedata.com:/local0/selector/data/dev /mnt/pine-data-phymgr/
 
 # setup GDPROOT remote + local
-mkdir /GDPROOT
-mkdir /GDPROOT/data
+mkdir -p /GDPROOT
+mkdir -p /GDPROOT/data
 # local content
 # ln -s /IdeaProjects/etc etc
 # remote content
