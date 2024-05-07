@@ -6,7 +6,9 @@
     "image": "ubuntu:22.04",
 //  "dockerFile": "Dockerfile",
   "runArgs": [
-    "--privileged", "--env-file","${localWorkspaceFolder}/.devcontainer/devcontainer.env",
+    "--privileged",
+//    "--env-file",
+//    ".devcontainer/devcontainer.env" // should be used instead of th be relative path
   ],
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
