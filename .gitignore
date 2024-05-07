@@ -2,5 +2,5 @@
 
 /backend/target/
 
-.env
+.devcontainer/devcontainer.env
 
