@@ -1,17 +1,16 @@
-apt update -y && apt install -y sshfs
-mkdir -p /mnt/$MOUNT_POINT/
-sshfs -o allow_other,default_permissions phymgr@$REMOTE_SERVER:$REMOTE_FOLDER /mnt/$MOUNT_POINT/
+sudo mkdir -p /mnt/$MOUNT_POINT/
+sudo sshfs -o allow_other,default_permissions phymgr@$REMOTE_SERVER:$REMOTE_FOLDER /mnt/$MOUNT_POINT/
 
 # setup GDPROOT remote + local
-mkdir -p /GDPROOT
-mkdir -p /GDPROOT/data
+sudo mkdir -p /GDPROOT
+sudo mkdir -p /GDPROOT/data
 # local content
 # ln -s /IdeaProjects/etc etc
 # remote content
-ln -s /mnt/$MOUNT_POINT/projects /GDPROOT/data/projects
-ln -s /mnt/$MOUNT_POINT/genomes /GDPROOT/data/genomes
-ln -s /mnt/$MOUNT_POINT/agents /GDPROOT/data/agents
-ln -s /mnt/$MOUNT_POINT/workflows /GDPROOT/data/workflows
-ln -s /mnt/$MOUNT_POINT/nextflow /GDPROOT/data/nextflow
-ln -s /mnt/$MOUNT_POINT/indexes/ /GDPROOT/data/indexes
-ln -s /mnt/$MOUNT_POINT/activities /GDPROOT/data/activities
+sudo ln -s /mnt/$MOUNT_POINT/projects /GDPROOT/data/projects
+sudo ln -s /mnt/$MOUNT_POINT/genomes /GDPROOT/data/genomes
+sudo ln -s /mnt/$MOUNT_POINT/agents /GDPROOT/data/agents
+sudo ln -s /mnt/$MOUNT_POINT/workflows /GDPROOT/data/workflows
+sudo ln -s /mnt/$MOUNT_POINT/nextflow /GDPROOT/data/nextflow
+sudo ln -s /mnt/$MOUNT_POINT/indexes /GDPROOT/data/indexes
+sudo ln -s /mnt/$MOUNT_POINT/activities /GDPROOT/data/activities
