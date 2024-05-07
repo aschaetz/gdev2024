@@ -3,10 +3,11 @@
 {
   "name": "GDevTodo",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "ubuntu:22.04",
-
-  "runArgs": ["--privileged"],
-
+    "image": "ubuntu:22.04",
+//  "dockerFile": "Dockerfile",
+  "runArgs": [
+    "--privileged", "--env-file",".devcontainer/devcontainer.env"
+  ],
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "17",
@@ -29,7 +30,9 @@
   //	}
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [3000],
+  "forwardPorts": [
+    3000
+  ]
 
   // Use 'postCreateCommand' to run commands after the container is created.
   // "postCreateCommand": "java -version",
@@ -39,5 +42,4 @@
 
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
-
 }

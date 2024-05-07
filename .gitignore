@@ -1,1 +1,6 @@
 /frontend/react/node_modules/
+
+/backend/target/
+
+.env
+
