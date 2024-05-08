@@ -1,3 +1,7 @@
+#fix git access
+git config --global --add safe.directory "*"
+
+#mount remote file system
 mkdir -p /mnt/$MOUNT_POINT/
 sshfs -o allow_other,default_permissions phymgr@$REMOTE_SERVER:$REMOTE_FOLDER /mnt/$MOUNT_POINT/
 
