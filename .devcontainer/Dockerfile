@@ -8,12 +8,13 @@ ARG USER_GID=$USER_UID
 
 # Install tools as root
 RUN apt update -y &&  \
-    apt install -y sshfs
+    apt install sshfs -y && \
+    apt install sudo -y
 
-# Create ubuntu user with sudo privileges
+# Create user with sudo privileges
 RUN useradd -ms /bin/bash $USERNAME && \
     usermod -aG sudo $USERNAME
-# New added for disable sudo password
+# Disable sudo password
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER $USERNAME
