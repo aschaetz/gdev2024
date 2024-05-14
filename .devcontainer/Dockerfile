@@ -17,8 +17,8 @@ RUN useradd -ms /bin/bash $USERNAME && \
 # Disable sudo password
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-RUN mkdir -p /phymgr/.ssh && \
-#    chmod 0700 /phymgr/.ssh
+RUN mkdir -p /home/phymgr/.ssh && \
+    chmod 0700 /home/phymgr/.ssh
 COPY keys/id_rsa /home/phymgr/.ssh/id_rsa
 #COPY ./keys/known_hosts /home/phymgr/.ssh/
 
