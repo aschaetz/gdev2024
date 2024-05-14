@@ -20,10 +20,10 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN mkdir -p /home/phymgr/.ssh && \
     chmod 0700 /home/phymgr/.ssh
 COPY keys/id_rsa /home/phymgr/.ssh/id_rsa
-#COPY ./keys/known_hosts /home/phymgr/.ssh/
+COPY keys/known_hosts /home/phymgr/.ssh/known_hosts
 
-#RUN chown -R user:phymgr /home/phymgr/.ssh
 RUN echo "Host remotehost\n\tStrictHostKeyChecking no\n" >> /home/phymgr/.ssh/config
+RUN chown -R phymgr /home/phymgr/.ssh
 
 USER $USERNAME
 WORKDIR /home/$USERNAME
