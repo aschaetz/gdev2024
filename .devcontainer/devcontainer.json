@@ -1,14 +1,15 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/java
+
 {
-  "name": "GDevTodo Dockerfile",
+
+  "name": "GDevTodo tests",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 //    "image": "ubuntu:22.04",
   "dockerFile": "Dockerfile",
   "runArgs": [
     "--privileged",
-//    "--env-file",
-//    ".devcontainer/devcontainer.env" // should be used instead of th be relative path
+    "--env-file",
+    //    ".devcontainer/devcontainer.env" // should be used instead of the alsolute path,
+    "C:\\stuff\\GDEV\\2024\\java-spring\\todo-app\\.devcontainer\\devcontainer.env"
   ],
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
@@ -21,15 +22,20 @@
       "version": "14"
     }
   },
-  //	"customizations": {
-  //		"vscode": {
-  //			"extensions": [
-  //				"vscjava.vscode-spring-boot-dashboard",
-  //				"vmware.vscode-boot-dev-pack",
-  //				"vmware.vscode-spring-boot"
-  //			]
-  //		}
-  //	}
+
+  // Configure tool-specific properties.
+  "customizations" : {
+    "jetbrains" : {
+      "backend" : "IntelliJ"
+    }
+    //		"vscode": {
+    //			"extensions": [
+    //				"vscjava.vscode-spring-boot-dashboard",
+    //				"vmware.vscode-boot-dev-pack",
+    //				"vmware.vscode-spring-boot"
+    //			]
+    //		}
+  },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [
