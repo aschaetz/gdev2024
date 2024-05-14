@@ -22,7 +22,7 @@ RUN mkdir -p /home/phymgr/.ssh && \
 COPY keys/id_rsa /home/phymgr/.ssh/id_rsa
 #COPY ./keys/known_hosts /home/phymgr/.ssh/
 
-RUN chown -R user:phymgr /home/phymgr/.ssh
+#RUN chown -R user:phymgr /home/phymgr/.ssh
 RUN echo "Host remotehost\n\tStrictHostKeyChecking no\n" >> /home/phymgr/.ssh/config
 
 USER $USERNAME
