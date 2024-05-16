@@ -2,8 +2,9 @@ sudo mkdir -p /mnt/$MOUNT_POINT/
 sudo sshfs -o allow_other,default_permissions,StrictHostKeyChecking=no,IdentityFile=/home/phymgr/.ssh/id_rsa phymgr@$REMOTE_SERVER:$REMOTE_FOLDER /mnt/$MOUNT_POINT/
 
 # setup GDPROOT remote + local
-sudo mkdir -p /GDPROOT
+
 sudo mkdir -p /GDPROOT/data
+sudo chown -R phymgr /GDPROOT
 # local content
 # ln -s /IdeaProjects/etc etc
 # remote content
